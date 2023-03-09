@@ -8,6 +8,7 @@ extern "C" {
 }
 
 #[wasm_bindgen]
-pub fn greet() {
-    alert("Hello, world");
+pub fn greet(input: &str) {
+    let out = format!("Hello, {input}!");
+    alert(&out);
 }
