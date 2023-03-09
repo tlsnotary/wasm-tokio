@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="shortcut icon" type="image/x-icon" href="./www/favicon.ico"/>
+    <title>Wasm-Tokio</title>
+    <script type="module">
+      import init, * as wasm from "../pkg/wasm_tokio.js";
+      await init();
+      wasm.init_panic_hook();
+      wasm.greet("WASM!");
+    </script>
+  </head>
+  <body>
+  </body>
+</html>
