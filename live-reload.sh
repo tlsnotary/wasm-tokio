@@ -14,4 +14,4 @@ browser="firefox"
 
 # This allows to kill both processes with Ctrl+C
 (trap 'kill 0' SIGINT; cargo watch -- wasm-pack build --target web \
-& live-server --watch="./www/,./pkg/" --entry-file="www/index.html" --browser=$browser)
+& live-server --watch="./www/,./pkg/" --entry-file="www/index.html" --browser=$browser --cors)

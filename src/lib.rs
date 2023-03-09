@@ -1,9 +1,8 @@
 use wasm_bindgen::prelude::*;
 
-#[wasm_bindgen]
-extern "C" {
-    fn alert(s: &str);
-}
+mod kos;
+
+pub use wasm_bindgen_rayon::init_thread_pool;
 
 #[wasm_bindgen]
 pub fn init_panic_hook() {
@@ -11,7 +10,18 @@ pub fn init_panic_hook() {
 }
 
 #[wasm_bindgen]
-pub fn greet(input: &str) {
-    let out = format!("Hello, {input}!");
-    alert(&out);
+pub fn run() {
+    let rt = tokio::runtime::Builder::new_current_thread()
+        .enable_all()
+        .build()
+        .unwrap();
+    rt.block_on(setup_kos());
+}
+
+async fn setup_kos() {
+    const OT_COUNT: usize = 10_000;
+
+    let (sender, receiver) = kos::init_kos();
+    let (sender, receiver) =
+        tokio::try_join!(sender.rand_setup(OT_COUNT), receiver.rand_setup(OT_COUNT)).unwrap();
 }

@@ -12,8 +12,11 @@ default = ["console_error_panic_hook"]
 
 [dependencies]
 wasm-bindgen = "0.2"
+wasm-bindgen-rayon = "1"
 tlsn-mpc-aio = { git = "https://github.com/tlsnotary/tlsn", branch = "async-backend-general" }
-tokio = { version = "1.0", default-features = false, features = ["sync", "rt", "io-util", "macros", "time"] }
+tlsn-mpc-core = { git = "https://github.com/tlsnotary/tlsn", branch = "async-backend-general" }
+tlsn-utils-aio = { git = "https://github.com/tlsnotary/tlsn", branch = "async-backend-general" }
+tokio = { version = "1.0", default-features = false, features = ["sync", "rt", "io-util", "macros"] }
 getrandom = { version = "0.2", features = ["js"] }
 
 # The `console_error_panic_hook` crate provides better debugging of panics by
