@@ -15,7 +15,7 @@ single-threaded tokio runtime and multiple rayon threads.
 wasm-pack build -t web -d www/pkg
 
 # Serve files
-simple-http-server --ip 127.0.0.1 -t1 -i --coop --coep www
+simple-http-server --ip 127.0.0.1 --nocache -t1 -i --coop --coep www
 ```
 
 
