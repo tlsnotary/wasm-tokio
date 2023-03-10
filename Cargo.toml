@@ -12,10 +12,9 @@ default = ["console_error_panic_hook"]
 
 [dependencies]
 wasm-bindgen = "0.2"
-wasm-bindgen-rayon = "1"
-tlsn-mpc-aio = { git = "https://github.com/tlsnotary/tlsn", branch = "async-backend-general" }
-tlsn-mpc-core = { git = "https://github.com/tlsnotary/tlsn", branch = "async-backend-general" }
-tlsn-utils-aio = { git = "https://github.com/tlsnotary/tlsn", branch = "async-backend-general" }
+tlsn-mpc-aio = { git = "https://github.com/tlsnotary/tlsn" }
+tlsn-mpc-core = { git = "https://github.com/tlsnotary/tlsn" }
+tlsn-utils-aio = { git = "https://github.com/tlsnotary/tlsn" }
 tokio = { version = "1.0", default-features = false, features = ["sync", "rt", "io-util", "macros"] }
 getrandom = { version = "0.2", features = ["js"] }
 
@@ -24,9 +23,6 @@ getrandom = { version = "0.2", features = ["js"] }
 # all the `std::fmt` and `std::panicking` infrastructure, so isn't great for
 # code size when deploying.
 console_error_panic_hook = { version = "0.1", optional = true }
-
-[dev-dependencies]
-wasm-bindgen-test = "0.3"
 
 [profile.release]
 # Tell `rustc` to optimize for small code size.
