@@ -8,10 +8,11 @@
   </head>
   <body>
     <script type="module">                                     
-        import init, * as wasm from "/wasm_tokio.js";           
+        import init, * as wasm from "./pkg/wasm_tokio.js";           
         await init();                                            
         await wasm.initThreadPool(navigator.hardwareConcurrency);
         wasm.init_panic_hook();                                  
+        wasm.run();
     </script>
   </body>
 </html>
