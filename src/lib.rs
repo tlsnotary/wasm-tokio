@@ -4,7 +4,7 @@ mod kos;
 
 pub use wasm_bindgen_rayon::init_thread_pool;
 
-const OT_COUNT: usize = 100;
+const OT_COUNT: usize = 1000000;
 
 #[wasm_bindgen]
 pub fn init_panic_hook() {
