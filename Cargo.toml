@@ -13,9 +13,9 @@ default = ["console_error_panic_hook"]
 [dependencies]
 wasm-bindgen = "0.2"
 wasm-bindgen-rayon = { version = "1", features = ["no-bundler"] }
-tlsn-mpc-aio = { git = "https://github.com/tlsnotary/tlsn", branch = "async-backend-general" }
-tlsn-mpc-core = { git = "https://github.com/tlsnotary/tlsn", branch = "async-backend-general" }
-tlsn-utils-aio = { git = "https://github.com/tlsnotary/tlsn", branch = "async-backend-general" }
+tlsn-mpc-aio = { git = "https://github.com/tlsnotary/tlsn" }
+tlsn-mpc-core = { git = "https://github.com/tlsnotary/tlsn" }
+tlsn-utils-aio = { git = "https://github.com/tlsnotary/tlsn" }
 tokio = { version = "1.0", default-features = false, features = ["sync", "rt", "io-util", "macros"] }
 getrandom = { version = "0.2", features = ["js"] }
 
