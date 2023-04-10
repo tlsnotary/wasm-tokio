@@ -3,6 +3,7 @@ name = "wasm-tokio"
 version = "0.1.0"
 authors = ["th4s"]
 edition = "2021"
+resolver = "2"
 
 [lib]
 crate-type = ["cdylib", "rlib"]
@@ -13,9 +14,9 @@ default = ["console_error_panic_hook"]
 [dependencies]
 wasm-bindgen = "0.2"
 wasm-bindgen-rayon = { version = "1", features = ["no-bundler"] }
-tlsn-mpc-aio = { git = "https://github.com/tlsnotary/tlsn" }
-tlsn-mpc-core = { git = "https://github.com/tlsnotary/tlsn" }
-tlsn-utils-aio = { git = "https://github.com/tlsnotary/tlsn" }
+tlsn-mpc-ot = { git = "https://github.com/tlsnotary/tlsn", branch="wasm-tokio" }
+tlsn-mpc-ot-core = { git = "https://github.com/tlsnotary/tlsn", branch="wasm-tokio" }
+tlsn-utils-aio = { git = "https://github.com/tlsnotary/tlsn", branch="wasm-tokio" }
 tokio = { version = "1.0", default-features = false, features = ["sync", "rt", "io-util", "macros"] }
 getrandom = { version = "0.2", features = ["js"] }
 

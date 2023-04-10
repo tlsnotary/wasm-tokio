@@ -1,5 +1,5 @@
-use mpc_aio::protocol::ot::kos::{receiver::Kos15IOReceiver, sender::Kos15IOSender};
-use mpc_core::ot::{r_state, s_state};
+use mpc_ot::kos::{receiver::Kos15IOReceiver, sender::Kos15IOSender};
+use mpc_ot_core::{r_state, s_state};
 use utils_aio::duplex::DuplexChannel;
 
 pub fn init_kos() -> (
